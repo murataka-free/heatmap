@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="./static/js/jmap.js"></script>
     <script type = "text/javascript">
         // ここに「Javascript」に記載する内容
@@ -89,21 +90,57 @@
 // });
 $(document).ready(function() {
     // 送信先のURL
-　　const url = "http://localhost:3333/heatmap/api";
+　　
 
     
 //const json;
 
     //$.getJSON(url,json)
+    const url = 'http://localhost:3333/heatmap/api';
+    var data;
 
-    const json;
-    $.getJSON(url, (json) => {
-      
+    $.getJSON(url, (data) => {
+        //console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
+        console.log("1");
+        let obj = JSON.parse(data);
+        console.log("2");
+        console.log(obj);
+        //let obj = data;
+
+      });
+    // var json;
+    // var requestURL = 'http://localhost:3333/heatmap/api';
+    // var request = new XMLHttpRequest();
+    // request.open('GET', requestURL);
+    // request.responseType = 'json';
+    // request.send();
+    // alert(3);
+
+//     $.getJSON("http://localhost:3333/heatmap/api", function(data){
+//   alert(JSON.stringify(data));
+// })
     
 
-    //const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
+//     //const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
 
-    const obj = JSON.parse(json);
+    
+//     .done(function(){
+//         alert(2);
+//     let obj = JSON.parse('json');
+//     });
+//     alert(1);
+    
+
+//     request.onload = function() {
+//         alert(2);
+//   var json = request.response;
+//   alert(4);
+//   let obj = JSON.parse('json');
+//   alert(5);
+// }
+
+    
+
 
     let hokkaidou = obj.北海道; 
     let aomori = obj.青森県;
@@ -154,7 +191,7 @@ $(document).ready(function() {
     let miyazaki = obj.北海道;
     let kagoshima = obj.青森県;
     let okinawa= obj.北海道;
-});
+
 
         $('#jmap').jmap(
         {
