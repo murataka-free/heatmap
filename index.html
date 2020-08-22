@@ -96,7 +96,8 @@ $(document).ready(function() {
 //const json;
 
     //$.getJSON(url,json)
-    const url = 'http://localhost:3333/heatmap/api';
+    //const url = 'http://localhost:3333/heatmap/api';
+    const url = 'http://localhost:5000/throughput';
     var data;
     var obj ;
 
@@ -165,9 +166,13 @@ $(document).ready(function() {
         
         //const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
 
-        var high = obj.青森県;
-        var mid = obj.北海道;
-        var low = obj.岩手県;
+        // var high = obj.青森県;
+        // var mid = obj.北海道;
+        // var low = obj.岩手県;
+
+        var high = obj.mie;
+        var mid = obj.tokyo;
+        var low = obj.oita;
 
      hokkaidou = mid; 
      aomori = low;
