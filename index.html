@@ -89,17 +89,19 @@
 // });
 $(document).ready(function() {
     // 送信先のURL
-　　// const url = "http://httpbin.org/get";
+　　const url = "http://localhost:3333/heatmap/api";
 
     
 //const json;
 
     //$.getJSON(url,json)
 
+    const json;
+    $.getJSON(url, (json) => {
+      
     
 
-
-    const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
+    //const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
 
     const obj = JSON.parse(json);
 
@@ -152,6 +154,7 @@ $(document).ready(function() {
     let miyazaki = obj.北海道;
     let kagoshima = obj.青森県;
     let okinawa= obj.北海道;
+});
 
         $('#jmap').jmap(
         {
