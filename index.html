@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./jmap.js"></script>
+    <script type="text/javascript" src="./static/js/jmap.js"></script>
     <script type = "text/javascript">
         // ここに「Javascript」に記載する内容
 //         $(document).ready(function() {
@@ -88,15 +88,24 @@
 //     });
 // });
 $(document).ready(function() {
+    // 送信先のURL
+　　// const url = "http://httpbin.org/get";
+
+    
+//const json;
+
+    //$.getJSON(url,json)
+
     
 
-    const json = '{"北海道":1000, "青森県":4000}';
+
+    const json = {"青森県":4000,"北海道":2000,"岩手県":100};
 
     const obj = JSON.parse(json);
 
     let hokkaidou = obj.北海道; 
     let aomori = obj.青森県;
-    let iwate = obj.北海道;
+    let iwate = obj.岩手県;
     let miyagi = obj.青森県;
     let akita = obj.北海道;
     let yamagata = obj.青森県;
@@ -144,9 +153,6 @@ $(document).ready(function() {
     let kagoshima = obj.青森県;
     let okinawa= obj.北海道;
 
-
-    alert(hokkaidou + aomori);
-
         $('#jmap').jmap(
         {
             
@@ -154,16 +160,14 @@ $(document).ready(function() {
     skew: '10',
     showHeatmap: true,
     heatmapLabelUnit: '人',
-    heatmapType: 'HRed',
+    // heatmapType: 'HRed',
+    heatmapConditions: ["<1200", ">=3000",  ">=6000"], // 色がマッチする条件
+    heatmapColors: ["#cccccc", "#FFA500", "#FF0000"], 　　　　　 // マッチした場合のヒートマップの色
     showHeatlabel: true,
     onSelect: function(e, data) {
         alert('人口は：%d 人です。'.replace('%d', (data.option.number * 1000).toLocaleString()));
     },
-    onLoad: function(e, data) {
-        var hokkaidou = 4000;
-
-
-    },
+    
     areas: [
     {code: 1,name: "北海道",number: hokkaidou},
     {code: 2,name: "青森",number: aomori},
