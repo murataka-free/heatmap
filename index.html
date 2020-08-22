@@ -317,7 +317,7 @@ $(document).ready(function() {
     heatmapColors: ["#cccccc", "#FFA500", "#FF0000"], 　　　　　 // マッチした場合のヒートマップの色
     showHeatlabel: true,
     onSelect: function(e, data) {
-        alert('人口は：%d 人です。'.replace('%d', (data.option.number * 1000).toLocaleString()));
+        alert('平均スループットは：%d kbpsです。'.replace('%d', 6000 - (data.option.number * 1000).toLocaleString()));
     },
     
     areas: [
@@ -423,8 +423,8 @@ $(document).ready(function() {
     <!-- Jmap表示位置 -->
     <div id="jmap">
         <div class="jmap-infobox">
-            <h5 class="h5">世界に一つだけの地図</h5>
-            <p>地図をクリックするとモーダルが表示されます。</p>
+            <h5 class="h5">Traffic News</h5>
+            <p>日本全国の通信状況を確認!!</p>
         </div>
     </div>
 
