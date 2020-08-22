@@ -98,11 +98,12 @@ $(document).ready(function() {
     //$.getJSON(url,json)
     const url = 'http://localhost:3333/heatmap/api';
     var data;
+    var obj ;
 
     $.getJSON(url, (data) => {
         //console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
         console.log("1");
-        let obj = JSON.parse(data);
+        obj = JSON.parse(data);
         console.log("2");
         console.log(obj);
         //let obj = data;
