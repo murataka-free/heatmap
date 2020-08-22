@@ -163,56 +163,61 @@ $(document).ready(function() {
         console.log(data);
         console.log(obj);
         
+        //const json = '{"青森県":4000,"北海道":2000,"岩手県":100}';
 
-     hokkaidou = obj.北海道; 
-     aomori = obj.青森県;
-     iwate = obj.岩手県;
-     miyagi = obj.青森県;
-     akita = obj.北海道;
-     yamagata = obj.青森県;
-     hukushima = obj.北海道;
-     ibaraki = obj.青森県;
-     tochigi = obj.北海道;
-     gunma = obj.北海道;
-     saitama = obj.青森県;
-     chiba = obj.北海道;
-     tokyo = obj.青森県;
-     kanagawa = obj.北海道;
-     niigata = obj.青森県;
-     toyama = obj.北海道;
-     ishikawa = obj.青森県;
+        var high = obj.青森県;
+        var mid = obj.北海道;
+        var low = obj.岩手県;
 
-     hukui = obj.北海道;
-     yamanashi = obj.青森県;
-     nagano = obj.北海道;
-     gihu = obj.青森県;
-     shizuoka = obj.北海道;
-     aichi = obj.青森県;
-     mie = obj.北海道;
-     shiga = obj.青森県;
-     kyoto = obj.北海道;
-     oosaka = obj.青森県;
-     hyougo = obj.北海道;
-     nara = obj.青森県;
-     wakayama = obj.北海道;
-     tottori = obj.青森県;
-     shimane = obj.北海道;
-     okayama = obj.青森県;
-     hiroshima= obj.北海道;
-     yamaguchi = obj.青森県;
+     hokkaidou = mid; 
+     aomori = low;
+     iwate = low;
+     miyagi = mid;
+     akita = low;
+     yamagata = low;
+     hukushima = low;
+     ibaraki = mid;
+     tochigi = mid;
+     gunma = low;
+     saitama = high;
+     chiba = mid;
+     tokyo = high;
+     kanagawa = high;
+     niigata = low;
+     toyama = mid;
+     ishikawa = mid;
+
+     hukui = low;
+     yamanashi = low;
+     nagano = low;
+     gihu = low;
+     shizuoka = mid;
+     aichi = high;
+     mie = mid;
+     shiga = low;
+     kyoto = mid;
+     oosaka = high;
+     hyougo = high;
+     nara = low;
+     wakayama = low;
+     tottori = low;
+     shimane = low;
+     okayama = low;
+     hiroshima= low;
+     yamaguchi = low;
     
-     tokushima = obj.北海道;
-     kagawa = obj.青森県;
-     ehime = obj.北海道;
-     kouchi = obj.青森県;
-     hukuoka = obj.北海道;
-     saga = obj.青森県;
-     nagasaki = obj.北海道;
-     kumamoto = obj.青森県;
-     ooita = obj.青森県;
-     miyazaki = obj.北海道;
-     kagoshima = obj.青森県;
-     okinawa= obj.北海道;
+     tokushima = low;
+     kagawa = low;
+     ehime = low;
+     kouchi = low;
+     hukuoka = high;
+     saga = low;
+     nagasaki = low;
+     kumamoto = mid;
+     ooita = low;
+     miyazaki = low;
+     kagoshima = mid;
+     okinawa= mid;
 
       
     // var json;
@@ -308,7 +313,7 @@ $(document).ready(function() {
     showHeatmap: true,
     heatmapLabelUnit: '人',
     // heatmapType: 'HRed',
-    heatmapConditions: ["<1200", ">=3000",  ">=6000"], // 色がマッチする条件
+    heatmapConditions: ["<1000", ">=1500",  ">=3500"], // 色がマッチする条件
     heatmapColors: ["#cccccc", "#FFA500", "#FF0000"], 　　　　　 // マッチした場合のヒートマップの色
     showHeatlabel: true,
     onSelect: function(e, data) {
